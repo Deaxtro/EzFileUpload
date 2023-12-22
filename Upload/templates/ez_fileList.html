@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+{% block content %}
+    <h2>ezFile</h2>
+    <a href="{% url 'ezFileUpload' %}" class="btn btn-primary btn-sm">
+        Upload File
+    </a>
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Download</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for files in ez %}
+            <tr>
+                <td>{{files.title}}</td>
+                <td>
+                    <a href="{{files.ezFile.url}}" class="btn btn-primary btn-sm" target="_blank">
+                        Download File
+                    </a>   
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock%}
