@@ -8,5 +8,7 @@ urlpatterns = [
     path('ezFile/login',views.login_user,name='login'),
     path('ezFile/logout',views.logout_user,name='logout'),
     path('ezFile/signup',views.signup,name='signup'),
+    #path('verification/',include('verify_email.urls')),
+    #uncomment to integrate email verification
 ]
   

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'FileUpload',
     'crispy_forms',#basic form styling using django crispy form package
     'crispy_bootstrap4',#basic form styling using django crispy form package
+    'verify_email.apps.VerifyEmailConfig',#Django-Email-Verify
 ]
 
 CRISPY_TEMPLATE_PACK='bootstrap4'
@@ -130,3 +131,18 @@ MEDIA_URL='/media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Email verification using Django-Verify-Email
+'''EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_ID') 
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PW')
+
+DEFAULT_FROM_EMAIL = 'noreply<no_reply@EzFile.com>'
+'''
+'''Commented out the email verification because it needs an
+    email address to send the verification emails
+    and with increased gmail security and me not having an email address
+    for testing'''
