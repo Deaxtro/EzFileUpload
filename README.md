@@ -31,7 +31,7 @@ Description: Allows users to upload files.
 3. User Login
 Path: /ezFile/login
 Function: views.login_user
-Description: Handles user login functionality.
+Description: Handles user login functionality. This is also the default landing page
 4. User Logout
 Path: /ezFile/logout
 Function: views.logout_user
