@@ -10,6 +10,15 @@ Also customized filefield to restrict the filetype being uploaded(only pptx, doc
 
 while also making it flexible enough to add/remove restrictions as per the need.
 
+
+Only logged in users can access the download and upload endpoints
+
+Ops user login details:   username: Ez
+                          password: ez!
+
+Client login details  :   username: damian
+                          password: abcd@efgh
+
 Endpoints
 1. List Files
 Path: /ezFile/
