@@ -1,6 +1,8 @@
 EzFile
 
 This Django project consists of several endpoints for managing files and user authentication.
+Used in built django groups to seperate users for achieving view restriction based on whether the user is Ops user or not and by default all the logged in user are treated as clients
+Also customized filefield to restrict the filetype being uploaded(only pptx, docs, xlsx) while also making it flexible enough to add/remove restrictions as per the need.
 
 Endpoints
 1. List Files
