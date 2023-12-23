@@ -6,7 +6,6 @@ from .models import Ez
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import permission_required
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -28,16 +27,18 @@ def ez_FileList(request):
     context={'ez':ez}
     return render(request, 'ez_fileList.html',context)
 
+@permission_required('FileUpload.add_Ez')
 def ez_File_upload(request):
-    if request.method=="POST":
-        form=EzForm(request.POST,request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('ezFile')
-    else:
-        form=EzForm()
-    context={'form':form}
-    return render(request, 'ez_file_upload.html',context)
+        if request.method=="POST":
+            form=EzForm(request.POST,request.FILES)
+            if form.is_valid():
+                form.save()
+                return redirect('ezFile')
+        else:
+            form=EzForm()
+        context={'form':form}
+        return render(request, 'ez_file_upload.html',context)
+    
 
 def login_user(request):
     if (request.method=='POST'):

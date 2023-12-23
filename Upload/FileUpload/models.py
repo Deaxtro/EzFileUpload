@@ -10,6 +10,5 @@ class Ez(models.Model):
         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
         'application/vnd.openxmlformats-officedocument.presentationml.presentation'
         ])
-
     def __str__(self):
         return self.title
