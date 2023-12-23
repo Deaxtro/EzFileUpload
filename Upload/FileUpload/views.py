@@ -4,15 +4,13 @@ from django.core.files.storage import FileSystemStorage
 from .forms import EzForm, SignUpForm
 from .models import Ez
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.decorators import permission_required, login_required
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views import generic
 from verify_email.email_handler import send_verification_email
 
 # Create your views here.
-class Home(TemplateView):
-    template_name='base.html'
 
 
 #This is just a test view that I created
@@ -27,6 +25,7 @@ def upload(request):
 
 
 #View for listing the downloadable files
+@login_required
 def ez_FileList(request):
     ez=Ez.objects.all()
     context={'ez':ez}
